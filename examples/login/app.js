@@ -3,9 +3,9 @@ var express = require('express')
   , util = require('util')
   , BoxStrategy = require('passport-box').Strategy;
 
-var BOX_CLIENT_ID     = "kjqlzn6few9c7u327l92fcj2rp8scani" // your box client id
-  , BOX_CLIENT_SECRET = "QgUwm5wuofWzDPw3SNcU4Kh5EV6cNVQS" // you box secret
-  , BOX_APP_PORT      = 8080;                              // port you registered with box
+var BOX_CLIENT_ID     = process.env.BOX_CLIENT_ID;     // your box client id
+  , BOX_CLIENT_SECRET = process.env.BOX_CLIENT_SECRET; // you box secret
+  , PORT              = process.env.PORT;              // port you registered with box
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -30,7 +30,7 @@ passport.deserializeUser( function(obj, done) {
 passport.use(new BoxStrategy({
   clientID: BOX_CLIENT_ID,
   clientSecret: BOX_CLIENT_SECRET,
-  callbackURL: 'http://localhost:' + BOX_APP_PORT + '/auth/box/callback'
+  callbackURL: 'http://localhost:' + PORT + '/auth/box/callback'
 },
 function(accessToken, refreshToken, profile, done) {
   // asynchronous verification, for effect...
@@ -107,6 +107,6 @@ app.get('/logout', function(req, res){
   res.redirect('/');
 });
 
-app.listen(BOX_APP_PORT, function(){
-  console.log('listening on port', BOX_APP_PORT);
+app.listen(PORT, function(){
+  console.log('listening on port', PORT);
 });
