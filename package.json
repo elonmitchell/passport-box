@@ -2,7 +2,18 @@
   "name": "passport-box",
   "version": "0.2.0",
   "description": "box authentication strategy for Passport.",
-  "keywords": ["passport", "box", "box.com", "oauth", "oauth 2.0", "auth", "api", "authentication", "bluedge", "bluedge.co.uk"],
+  "keywords": [
+    "passport",
+    "box",
+    "box.com",
+    "oauth",
+    "oauth 2.0",
+    "auth",
+    "api",
+    "authentication",
+    "bluedge",
+    "bluedge.co.uk"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/bluedge/passport-box.git"
@@ -12,14 +23,16 @@
     "email": "nico@bluedge.co.uk",
     "url": "http://bluedge.co.uk/"
   },
-  "licenses": [ {
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/MIT" 
-  } ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
   "main": "./lib/",
   "dependencies": {
-    "pkginfo": "0.2.x",
-    "passport-oauth": "0.1.x"
+    "pkginfo": "0.4.x",
+    "passport-oauth": "1.0.0"
   },
   "devDependencies": {
     "vows": "0.6.x"
